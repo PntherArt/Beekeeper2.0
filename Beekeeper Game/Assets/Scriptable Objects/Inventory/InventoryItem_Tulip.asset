@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a7d100a6553914cba435640b44e78c, type: 3}
+  m_Name: InventoryItem_Tulip
+  m_EditorClassIdentifier: 
+  obj: {fileID: 11400000, guid: fac06ea9b5350cb4787bd0705182cb1a, type: 2}
+  itemMesh: {fileID: 919132149155446097, guid: 5601dfe367458f64c9ae00e9481be326, type: 3}
+  maxStackSize: 20

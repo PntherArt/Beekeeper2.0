@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 881be88eda1180247b18eb9aa1a1e4d6, type: 3}
+  m_Name: Sunflower
+  m_EditorClassIdentifier: 
+  id: 4
+  uiImage: {fileID: 21300000, guid: 79835f76c6cc26f47b81e9dae3b2482c, type: 3}
+  objectName: Sunflower
+  buyValue: 10
+  sellValue: 0
+  flowerMesh: {fileID: 919132149155446097, guid: 6ccb8a45d65e9e74c9228f39153e4b3c, type: 3}
+  height: 1.32
+  radius: 0.33
+  product: {fileID: 11400000, guid: d5ea54b147f51b24c86b9d7ac1d29ded, type: 2}
+  productPerDay: 1
