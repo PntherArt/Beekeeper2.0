@@ -6,6 +6,8 @@ using UnityEngine.Rendering.Universal;
 
 public class DayNightSwap : MonoBehaviour
 {
+    //I couldn't find an easy way to save 2 lighting/scene presets so I created them myself
+
     [Header("Colour Arrays")]
     public Color[] shadowCol;
     public Color[] sunCol;
@@ -34,6 +36,7 @@ public class DayNightSwap : MonoBehaviour
 
     private void Start()
     {
+        //these get all of the game objects that need to be swapped
         sunLight.gameObject.GetComponent<Light>();
         
         AudioBGM[0].GetComponent<GameObject>();
@@ -44,13 +47,6 @@ public class DayNightSwap : MonoBehaviour
         grassRend[0].GetComponent<GameObject>();
         grassRend[1].GetComponent<GameObject>();
 
-
-    }
-
-
-    void Update()
-    {
-        
 
     }
 
@@ -69,6 +65,7 @@ public class DayNightSwap : MonoBehaviour
         //directional light sun
         sunLight.GetComponent<Light>().color = sunCol[0];
 
+        //changes all of the grass colours to be lighter during the day
         grassRend[0].gameObject.GetComponent<Renderer>().material.GetColor("_TipColor");
         grassRend[1].gameObject.GetComponent<Renderer>().material.GetColor("_TipColor");
 
@@ -78,9 +75,11 @@ public class DayNightSwap : MonoBehaviour
         AudioBGM[1].GetComponent<AudioSource>().Stop();
         AudioBGM[0].GetComponent<AudioSource>().Play();
 
+        //turns the butterflies on
         fireflies.SetActive(false);
         butterflies.SetActive(true);
 
+        //makes the bloom orange
         Bloom bloom;
         postProc.profile.TryGet(out bloom);
         bloom.tint.value = bloomCol[0];
@@ -105,6 +104,7 @@ public class DayNightSwap : MonoBehaviour
         //directional light moon
         sunLight.GetComponent<Light>().color = sunCol[1];
 
+        //makes the grass darker
         grassRend[0].gameObject.GetComponent<Renderer>().material.GetColor("_TipColor");
         grassRend[1].gameObject.GetComponent<Renderer>().material.GetColor("_TipColor");
 
@@ -114,9 +114,11 @@ public class DayNightSwap : MonoBehaviour
         AudioBGM[0].GetComponent<AudioSource>().Stop();
         AudioBGM[1].GetComponent<AudioSource>().Play();
 
+        //turns the fireflies on
         butterflies.SetActive(false);
         fireflies.SetActive(true);
 
+        //makes the bloom silver
         Bloom bloom;
         postProc.profile.TryGet(out bloom);
         bloom.tint.value = bloomCol[1];

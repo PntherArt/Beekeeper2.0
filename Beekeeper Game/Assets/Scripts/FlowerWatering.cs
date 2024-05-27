@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class FlowerWatering : MonoBehaviour
 {
+    //This controls the watering flowers system
     [Header("Watering Checkboxes")]
     public bool isWatered = false;
     public bool hasWaterCan = false;
@@ -41,7 +42,7 @@ public class FlowerWatering : MonoBehaviour
 
     private void Update()
     {
-
+        //This holds the UI for the can fullness
         uiWaterIndicator.GetComponent<Slider>().value = waterLevel;
 
         if (waterLevel == 0)
@@ -55,13 +56,14 @@ public class FlowerWatering : MonoBehaviour
 
             }
         }
-        
+        //this toggles whether or not the can is in the inventory
         if(pickUp.transform.childCount == 0)
         {
             hasWaterCan = false;
             uiWaterSlider.SetActive(false);
         }
 
+        //this controls the tags that allow filling the can, the actual watering and the vfx triggered
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 100.0f) && pickUp.transform.childCount != 0)
             {
 
@@ -113,7 +115,7 @@ public class FlowerWatering : MonoBehaviour
 
     }
 
-
+    //this controls the filling of the can in designated places
     public void FillTheCan()
     {
         if (pickUp.transform.GetChild(0).CompareTag("Water Can"))
@@ -135,7 +137,7 @@ public class FlowerWatering : MonoBehaviour
         }
     }
 
-
+    //this controls the sparkle vfx after the flower has been watered successfully
     IEnumerator FlowerSparkle()
     {
         pickUp.transform.GetChild(0).transform.GetChild(0).GetComponent<ParticleSystem>().Play();
